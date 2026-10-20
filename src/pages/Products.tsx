@@ -12,7 +12,20 @@ import {
 export default function Products({ go }: { go: Go }) {
   const { products, loading, error, reload } = useProducts()
   const [filter, setFilter] = useState("All")
-  const categories = ["All", "Spices", "Fresh Produce", "Grains"]
+  const preferred = [
+    "Spices",
+    "Fresh Produce",
+    "Grains",
+    "Pulses",
+    "Oilseeds",
+    "Agri Inputs",
+  ]
+  const present = [...new Set(products.map((product) => product.category))]
+  const categories = [
+    "All",
+    ...preferred.filter((category) => present.includes(category)),
+    ...present.filter((category) => !preferred.includes(category)),
+  ]
   const filtered =
     filter === "All" ? products : products.filter((p) => p.category === filter)
   return (

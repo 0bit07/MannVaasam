@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useProducts } from "../hooks/useProducts"
-import { findProduct } from "../lib/products"
+import { findProduct, mediaUrl } from "../lib/products"
 import type { Go } from "../types"
 import { Button, Eyebrow } from "../components/ui"
 import NotFound from "./NotFound"
@@ -54,12 +54,12 @@ export default function ProductDetails({ slug, go }: ProductDetailsProps) {
         >
           <img
             className="detail-main-image"
-            src={product.image}
+            src={mediaUrl(product.image)}
             alt={product.alt}
           />
           {product.secondaryImage && (
             <img
-              src={product.secondaryImage}
+              src={mediaUrl(product.secondaryImage)}
               alt={product.secondaryAlt || product.alt}
             />
           )}

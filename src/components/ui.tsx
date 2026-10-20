@@ -1,5 +1,5 @@
 import type { ReactNode } from "react"
-import { productPath } from "../lib/products"
+import { mediaUrl, productPath } from "../lib/products"
 import type { DailyPrice, Go, Product } from "../types"
 
 export function Arrow({ diagonal = false }: { diagonal?: boolean }) {
@@ -242,7 +242,7 @@ export function ProductTile({
         onClick={() => go(href)}
         aria-label={`View ${product.name}`}
       >
-        <img src={product.image} alt={product.alt} />
+        <img src={mediaUrl(product.image)} alt={product.alt} />
         <span className="image-index">0{index + 1}</span>
       </button>
       <div className="product-meta">

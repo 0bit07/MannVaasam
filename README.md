@@ -115,18 +115,6 @@ From the dashboard you can:
 
 ## Deploying
 
-This project needs a host that runs the `api/` Serverless Functions, not just a static file host — deploy to **Vercel**.
-
-1. Push the repo to Vercel (via `vercel` CLI or by importing the Git repo in the Vercel dashboard).
-2. Set `DATABASE_URL`, `JWT_SECRET`, `ADMIN_DEFAULT_USERNAME`, and `ADMIN_DEFAULT_PASSWORD` as project environment variables in Vercel.
-3. Run `pnpm db:migrate` once against the production database (locally with `DATABASE_URL` pointed at production, or via `vercel env pull` + `pnpm db:migrate`).
-4. Deploy — `pnpm build` runs automatically via `vercel.json`.
-
-If you deploy the frontend alone to a plain static host (Netlify, Cloudflare Pages, GitHub Pages), the storefront and admin dashboard will show "could not reach the API" instead of crashing, but none of the backend features will work. Use Vercel for the full app.
+Frontend and backend go out together on **Vercel**. Step-by-step instructions are in [`DEPLOYMENT.md`](./DEPLOYMENT.md).
 
 For more implementation details (project structure, API routes, code-quality conventions), see [`AGENTS.md`](./AGENTS.md).
-
-
-cd ~/Documents/Personal/Mannvaasam
-vercel whoami
-vercel link

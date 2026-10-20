@@ -2,7 +2,7 @@ import type { VercelRequest, VercelResponse } from "@vercel/node"
 import jwt from "jsonwebtoken"
 
 const COOKIE_NAME = "mv_admin_session"
-const SESSION_MAX_AGE_SECONDS = 7 * 24 * 60 * 60
+const SESSION_MAX_AGE_SECONDS = 24 * 60 * 60
 
 export type AdminTokenPayload = {
   sub: number

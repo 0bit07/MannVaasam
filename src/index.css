@@ -186,7 +186,7 @@ em { font-weight: 400; color: var(--gold); }
 .values-grid h3 { font-size: 31px; margin: 55px 0 15px; }
 .values-grid p { color: var(--muted); line-height: 1.7; font-size: 13px; }
 .catalogue { padding-top: 60px; }
-.filters { display: flex; gap: 35px; border-bottom: 1px solid var(--line); }
+.filters { display: flex; gap: 28px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
 .filters button { background: none; border: 0; padding: 0 0 14px; color: var(--muted); cursor: pointer; font-size: 12px; position: relative; }
 .filters button.active { color: var(--forest); }
 .filters button.active:after { content: ""; position: absolute; height: 2px; background: var(--forest); left: 0; right: 0; bottom: -1px; }
